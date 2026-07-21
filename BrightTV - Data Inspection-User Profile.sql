@@ -6,7 +6,7 @@ limit 100;
 ---------Gender Checks-----------------------
 ------------------------------------------------------
 SELECT DISTINCT gender
-FROM brighttv.brighttv.bright_tv_dataset_user_profiles
+FROM brighttv.brighttv.bright_tv_dataset_user_profiles;
 
 SELECT DISTINCT
     CASE 
@@ -15,12 +15,12 @@ SELECT DISTINCT
        WHEN gender IS Null THEN 'Unknown'
        ELSE gender --if gender is male or female return it as it is
     END AS sex ---- New column name
-FROM brighttv.brighttv.bright_tv_dataset_user_profiles
+FROM brighttv.brighttv.bright_tv_dataset_user_profiles;
 --------------------------------------------------------
 ------------ Race Checks ------ Counting Ethnicity
 -------------------------------------------------------
 SELECT DISTINCT race
-FROM brighttv.brighttv.bright_tv_dataset_user_profiles
+FROM brighttv.brighttv.bright_tv_dataset_user_profiles;
 
 
 SELECT COUNT(DISTINCT  userid) AS subs,
@@ -37,7 +37,7 @@ GROUP BY ethnicity;
 ------Province Checks ------ 
 -------------------------------------------------------
 SELECT DISTINCT province
-FROM brighttv.brighttv.bright_tv_dataset_user_profiles
+FROM brighttv.brighttv.bright_tv_dataset_user_profiles;
 
 SELECT DISTINCT 
 CASE
@@ -46,14 +46,14 @@ CASE
     WHEN province IS NULL THEN 'Unknown'
     ELSE province 
     END AS Region
-FROM brighttv.brighttv.bright_tv_dataset_user_profiles
+FROM brighttv.brighttv.bright_tv_dataset_user_profiles;
 
 --------------------------------------------------------
 ------Age Checks ------ 
 -------------------------------------------------------
 
 SELECT DISTINCT age
-FROM brighttv.brighttv.bright_tv_dataset_user_profiles
+FROM brighttv.brighttv.bright_tv_dataset_user_profiles;
 
 SELECT 
   CASE
@@ -65,7 +65,7 @@ SELECT
      WHEN Age >50 AND age<=60 THEN 'Elder'
      WHEN Age >60 THEN 'Pensioner' 
      END AS Age_group
-FROM brighttv.brighttv.bright_tv_dataset_user_profiles
+FROM brighttv.brighttv.bright_tv_dataset_user_profiles;
 
 --------------------------------------------------------
 CREATE OR REPLACE TEMPORARY TABLE processed_userprofiles AS 
